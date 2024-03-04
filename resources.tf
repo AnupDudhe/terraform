@@ -9,7 +9,7 @@ resource "aws_instance" "this_aws_instance" {
   }
   count = var.this_aws_instance_count
   //user_data_base64 = var.this_aws_instance_user_data_base64
-    user_data        = <<-EOF
+    user_data = <<-EOF
             #!/bin/bash
     sudo -i
     sudo yum update –y
@@ -22,7 +22,7 @@ resource "aws_instance" "this_aws_instance" {
     sudo yum install jenkins -y
     sudo systemctl enable jenkins
     systemctl start jenkins
-            EOF 
+    EOF 
 
 
 
@@ -117,3 +117,44 @@ resource "aws_db_instance" "this_aws_db" {
 
 
 
+resource "aws_iam_user" "this_iam_user" {
+    name = "terraform"
+    path = "/"
+
+    tags = {
+    name = "test"
+  }
+}
+
+resource "aws_iam_policy_attachment" "this_aws_iam_poli" {
+       name = "test-attachment"
+       policy_arn = aws_iam_policy.policy.arn
+       users      = [aws_iam_user.this_iam_user.name]
+       depends_on = [aws_iam_policy.policy] #explicity or implicit
+  
+}
+
+
+resource "aws_iam_policy" "policy" {
+  name        = "new_policy"
+  path        = "/"
+  description = "My test policy"
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:Describe*",
+          "s3:FullAccess",
+          "ec2:CreateKeyPair",
+          "ec2:AttachVolume"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+} 

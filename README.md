@@ -1,4 +1,4 @@
-Infrastructure as Code (IaC) :
+``` Infrastructure as Code (IaC) :
 
 	Before the advent of IaC, infrastructure management was typically a manual and time-consuming process. System administrators and operations teams had to:
 
@@ -19,9 +19,9 @@ These tools enable organizations to define, deploy, and manage their infrastruct
 
 
 What is Terraform ?
-Terraform is an open source ìInfrastructure as Codeî tool, created by HashiCorp.
-A†declarative†coding tool, Terraform enables developers to use a high-level configuration language called HCL (HashiCorp Configuration Language) to describe the desired ìend-stateî cloud or on-premises infrastructure for running an application. It then generates a plan for reaching that end-state and executes the plan to provision the infrastructure.
-Because Terraform uses a simple syntax, can provision infrastructure across multiple cloud and on-premises†data centers, and can safely and efficiently re-provision infrastructure in response to configuration changes, it is currently one of the most popular infrastructure automation tools available. If your organization plans to deploy a†hybrid cloud†or†multicloud†environment, youíll likely want or need to get to know Terraform.
+Terraform is an open source ‚ÄúInfrastructure as Code‚Äù tool, created by HashiCorp.
+A¬†declarative¬†coding tool, Terraform enables developers to use a high-level configuration language called HCL (HashiCorp Configuration Language) to describe the desired ‚Äúend-state‚Äù cloud or on-premises infrastructure for running an application. It then generates a plan for reaching that end-state and executes the plan to provision the infrastructure.
+Because Terraform uses a simple syntax, can provision infrastructure across multiple cloud and on-premises¬†data centers, and can safely and efficiently re-provision infrastructure in response to configuration changes, it is currently one of the most popular infrastructure automation tools available. If your organization plans to deploy a¬†hybrid cloud¬†or¬†multicloud¬†environment, you‚Äôll likely want or need to get to know Terraform.
 --------------------------------------------------------------------------------------
 
 
@@ -71,7 +71,7 @@ Workspace: Workspaces in Terraform are a way to manage multiple environments (e.
 
 Remote Backend: A remote backend is a storage location for your Terraform state files that is not stored locally. Popular choices for remote backends include Amazon S3, Azure Blob Storage, or HashiCorp Terraform Cloud. Remote backends enhance collaboration and provide better security and reliability for your state files.
 
-These are some of the essential terms you'll encounter when working with Terraform. As you start using Terraform for your infrastructure provisioning and management, you'll become more familiar with these concepts and how they fit together in your†IaC†workflows.
+These are some of the essential terms you'll encounter when working with Terraform. As you start using Terraform for your infrastructure provisioning and management, you'll become more familiar with these concepts and how they fit together in your¬†IaC¬†workflows.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 

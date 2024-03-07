@@ -1,6 +1,6 @@
-``` Infrastructure as Code (IaC) :
+Infrastructure as Code (IaC) :
 
-	Before the advent of IaC, infrastructure management was typically a manual and time-consuming process. System administrators and operations teams had to:
+Before the advent of IaC, infrastructure management was typically a manual and time-consuming process. System administrators and operations teams had to:
 
 1)  Manually Configure Servers: Servers and other infrastructure components were often set up and configured manually, which could lead to inconsistencies and errors.
 

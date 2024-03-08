@@ -1,4 +1,4 @@
-Infrastructure as Code (IaC) :
+### Infrastructure as Code (IaC) :
 
 Before the advent of IaC, infrastructure management was typically a manual and time-consuming process. System administrators and operations teams had to:
 
@@ -18,14 +18,14 @@ These tools enable organizations to define, deploy, and manage their infrastruct
 
 
 
-What is Terraform ?
+### What is Terraform ?
 Terraform is an open source “Infrastructure as Code” tool, created by HashiCorp.
 A declarative coding tool, Terraform enables developers to use a high-level configuration language called HCL (HashiCorp Configuration Language) to describe the desired “end-state” cloud or on-premises infrastructure for running an application. It then generates a plan for reaching that end-state and executes the plan to provision the infrastructure.
 Because Terraform uses a simple syntax, can provision infrastructure across multiple cloud and on-premises data centers, and can safely and efficiently re-provision infrastructure in response to configuration changes, it is currently one of the most popular infrastructure automation tools available. If your organization plans to deploy a hybrid cloud or multicloud environment, you’ll likely want or need to get to know Terraform.
 --------------------------------------------------------------------------------------
 
 
-Why Terraform ?
+### Why Terraform ?
 
 There are multiple reasons why Terraform is used over the other IaC tools but below are the main reasons.
 
@@ -47,7 +47,7 @@ There are multiple reasons why Terraform is used over the other IaC tools but be
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-Key Terminologies in Terraform :
+### Key Terminologies in Terraform :
 	To get started with Terraform, it's important to understand some key terminology and concepts. Here are some fundamental terms and explanations.
 Provider: A provider is a plugin for Terraform that defines and manages resources for a specific cloud or infrastructure platform. Examples of providers include AWS, Azure, Google Cloud, and many others. You configure providers in your Terraform code to interact with the desired infrastructure platform.
 
@@ -75,31 +75,35 @@ These are some of the essential terms you'll encounter when working with Terrafo
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-Install Terraform :
-
+### Install Terraform :
+```
 Ubuntu/Debian
 $ wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
 $ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 $ sudo apt update && sudo apt install terraform
-
+```
 -----------------------------------------------------------------
 
-CentOS/RHEL
+### CentOS/RHEL
+```
 $ sudo yum install -y yum-utils
 $ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 $ sudo yum -y install terraform
-
+```
 ---------------------------------------------------------------------
 
-Amazon Linux
+### Amazon Linux
+```
 $ sudo yum install -y yum-utils shadow-utils
 $ sudo yum-config-manager --add-repohttps://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 $ sudo yum -y install terraform
-
+```
 -------------------------------------------------------------------------
 
-Windows
+### Windows
+```
 To download terraform on windows, refer below page;
 https://developer.hashicorp.com/terraform/install#windows
+```

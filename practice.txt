@@ -1,0 +1,53 @@
+provider "aws" {
+    region =  "us-west-2"
+    profile = "configs"
+}
+ 
+
+resource "aws_iam_user" "main_user" {
+    name = "linux.${count.index}"
+    count = 3          
+}
+resource "aws_iam_user" "main_user_1" {
+    count = length(var.user_name)
+    name =  var.user_name[count.index]
+}
+
+variable "user_name" {
+      default = ["ubuntu", "centos", "alma"]
+}
+
+
+resource "aws_instance" "this_aws_instance" {
+    for_each = toset(var.aws_ami)
+    ami = each.value
+    vpc_security_group_ids = ["sg-032e1a4a1685a03be"]
+    key_name = "delete_oregon_anup"
+    instance_type = "t2.micro"
+}
+
+variable "aws_ami" {
+    type = list(string)
+    default = ["ami-0eb5115914ccc4bc2","ami-08f7912c15ca96832","ami-0f7197c592205b389"]
+}  
+
+output "name" {
+   value = [ for instance in var.aws_ami:
+    aws_instance.this_aws_instance[instance].public_ip
+   ]
+}
+
+
+resource "aws_iam_user" "name" {
+    name = "sample.${count.index}"
+    count = 3
+}
+
+resource "aws_iam_user" "name2" {
+    count = length(var.names)
+    name = var.names[count.index]
+}
+variable "names" {
+    default = ["name1","name2", "name3"]
+  
+}

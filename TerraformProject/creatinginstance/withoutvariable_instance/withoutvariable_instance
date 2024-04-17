@@ -1,0 +1,18 @@
+resource "aws_instance" "this" {
+  ami             = "ami-0d2e2d99a673fca16"
+  instance_type   = "t2.micro"
+  key_name        = "NVanupDelete"
+  security_groups = ["sg-0e0c5e2ada8c28466"]
+  subnet_id       = "subnet-0f3df99cfc27c92c8"
+  disable_api_termination = true
+  count = 
+  
+  tags = {
+    purpose = "demo purposes"
+  }  
+}
+
+output "gfg_instance_ip" {
+  value       = aws_instance.this.public_ip
+  description = "very important"
+}

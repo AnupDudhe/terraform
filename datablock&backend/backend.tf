@@ -8,7 +8,7 @@ provider "aws" {
 
 terraform {
     backend "s3" {
-        bucket = "cbzbatch24"
+        bucket = "cbzbatch"
         key = "terraform.tfstate"
         dynamodb_table = "cbz24"
         region = "us-west-2"

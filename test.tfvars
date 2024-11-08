@@ -6,3 +6,8 @@ this_aws_instance_tags = {
             Name2 = "Terraform_instance_b24_via_autotfvars"
             number = 3
        }
+
+
+
+#terraform plan -var-file="variables.tfvars"
+#terraform apply -var-file="variables.tfvars"

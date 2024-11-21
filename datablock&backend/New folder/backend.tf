@@ -38,3 +38,7 @@ resource "aws_instance" "ths_instance" {
   } 
     
 }
+
+
+#aws dynamodb delete-item --table-name <TABLE_NAME> --key '{"LockID": {"S": "8b052f98-5105-f4af-d193-eb690b5ee86b"}}'
+#aws dynamodb describe-table --table-name cbz38 --region us-east-1

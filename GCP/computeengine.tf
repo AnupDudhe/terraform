@@ -1,18 +1,17 @@
-
 terraform {
+  required_version = ">= 0.12"
+
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "~> 4.0"
+      version = "~> 3.0"
     }
   }
-
-  required_version = ">= 1.0.0"
 }
 
 provider "google" {
-  credentials = file("<path-to-your-service-account-json>")  # or skip if using gcloud auth
-  project     = ""
+  credentials = file("/opt/macro-raceway-447213-b5-aa8ad4ea4cf8.json")
+  project     = "macro-raceway-447213-b5"
   region      = "us-central1"
   zone        = "us-central1-a"
 }

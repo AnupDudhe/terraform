@@ -1,0 +1,1 @@
+gsutil cp -r gs://spls/gsp480/gke-network-policy-demo .
